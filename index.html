@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+  <title>Sports Peecks</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<!-- ══════════════ LOGIN ══════════════ -->
+<div id="login-screen">
+  <div class="login-bg">
+    <div class="login-orb orb1"></div>
+    <div class="login-orb orb2"></div>
+    <div class="login-orb orb3"></div>
+  </div>
+  <div class="login-card">
+    <div class="login-logo">
+      <span class="login-logo-icon">⚡</span>
+      <div>
+        <div class="login-logo-text">Sports <span>Peecks</span></div>
+        <div class="login-logo-sub">Predictions & Analytics</div>
+      </div>
+    </div>
+    <div class="login-divider"></div>
+    <div class="login-form">
+      <div class="lf-group">
+        <label>Usuario</label>
+        <input id="l-user" type="text" placeholder="tu usuario" autocomplete="username"/>
+      </div>
+      <div class="lf-group">
+        <label>Contraseña</label>
+        <input id="l-pass" type="password" placeholder="••••••••" autocomplete="current-password"/>
+      </div>
+      <div id="login-error" class="login-error"></div>
+      <button class="login-btn" onclick="doLogin()">Entrar</button>
+    </div>
+    <div class="login-footer">v0.2 · Acceso privado</div>
+  </div>
+</div>
+
+<!-- ══════════════ APP ══════════════ -->
+<div id="app-screen" style="display:none">
+
+  <div class="app">
+    <!-- TOP BAR -->
+    <div class="top-bar">
+      <div class="logo-wrap">
+        <span class="tb-icon">⚡</span>
+        <div class="logo">Sports <span class="logo-accent">Peecks</span></div>
+        <span class="version-tag">v0.2</span>
+      </div>
+      <div class="tb-right">
+        <div class="live-pill"><span class="live-dot"></span>En vivo</div>
+        <button class="logout-btn" onclick="doLogout()" title="Salir">↩</button>
+      </div>
+    </div>
+
+    <!-- SCREENS -->
+    <div class="content">
+      <div id="s-dash"    class="screen active"></div>
+      <div id="s-sports"  class="screen"></div>
+      <div id="s-leagues" class="screen"></div>
+      <div id="s-matches" class="screen"></div>
+      <div id="s-bets"    class="screen"></div>
+    </div>
+
+    <!-- BOTTOM NAV -->
+    <div class="bottom-nav">
+      <button class="nav-item active" id="nb-dash" onclick="go('dash')">
+        <span class="ni-icon">📊</span><span class="ni-label">Dashboard</span>
+      </button>
+      <button class="nav-item" id="nb-sports" onclick="go('sports')">
+        <span class="ni-icon">🏆</span><span class="ni-label">Deportes</span>
+      </button>
+      <button class="nav-item" id="nb-bets" onclick="go('bets')">
+        <span class="ni-icon">📋</span><span class="ni-label">Apuestas</span>
+      </button>
+    </div>
+  </div>
+
+  <button class="fab" id="fab" onclick="toggleForm()">+</button>
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
